@@ -1,0 +1,67 @@
+# https://github.com/pulumi/examples/blob/master/.gitignore
+/.pulumi/
+/.vscode/
+/.vs/
+bin/
+build/
+node_modules/
+*.pyc
+.Python
+venv/
+include/
+lib/
+yarn.lock
+package-lock.json
+Pulumi.*.yaml
+.idea/
+.ionide/
+*.iml
+key.rsa*
+obj/
+vendor
+Gopkg.lock
+
+**/ci-scripts
+
+# Java app
+.gradle/
+.settings/
+.project
+.classpath
+
+
+# https://github.com/pulumi/pulumi/blob/master/.gitignore
+*.swp
+**/vendor/
+**/node_modules/
+**/bin
+**/.vscode/
+**/.vs/
+**/.ionide/
+**/.idea/
+coverage.cov
+*.coverprofile
+
+**/.idea/
+*.iml
+
+# VSCode creates this binary when running tests in the debugger
+**/debug.test
+
+# Go tests run "in tree" and this folder will linger if they fail (the integration test framework cleans
+# it up when they pass.)
+**/command-output/
+
+# By default, we don't check in yarn.lock files
+**/yarn.lock
+
+# Turning on MyPy in VSCode creates this workspace local folder
+.mypy_cache
+
+# for goreleaser
+goreleaser
+pulumi-resource-pulumi-nodejs
+pulumi-resource-pulumi-python
+pulumi-analyzer-policy
+pulumi-analyzer-policy-python
+pulumi-language-python-exec

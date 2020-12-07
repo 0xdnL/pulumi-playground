@@ -1,0 +1,3 @@
+name: aws-js-lambda
+runtime: nodejs
+description: A simple AWS serverless JavaScript Pulumi program

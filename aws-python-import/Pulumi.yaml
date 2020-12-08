@@ -1,0 +1,6 @@
+name: aws-python-import
+runtime:
+  name: python
+  options:
+    virtualenv: venv
+description: testing import of existing cloud infra

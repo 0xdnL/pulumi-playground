@@ -13,8 +13,9 @@
 
 ## prerequesites
 - `puliumi` installed e.g. `brew install pulumi`
-- language runtime installed e.g. typescript, javascript, python, go, c#
-- cloud credentials setup e.g. `$HOME/.aws/`
+- `tf2pulumi` installed e.g. `brew install pulumi/tap/tf2pulumi`
+- language runtime installed e.g. `node`, `python`, `go`
+- aws profile and credentials present at `$HOME/.aws/`
 - (optional) `aws` cli installed
 - (optional) `curl` cli installed
 
@@ -51,7 +52,6 @@ aws s3 ls $(pulumi stack output bucketName)
 curl $(pulumi stack output bucketEndpoint)
 ```
 
-
 ## cleanup
 ```sh
 cd ./aws-go && pulumi destroy
@@ -60,8 +60,17 @@ cd ./aws-go && pulumi destroy
 pulumi stack rm STACK_NAME
 ```
 
+## from terraform to pulumi
+if existing infrastructure was provisioned with Terraform, there are a number of options that will help you adopt Pulumi
+- Coexist with resources provisioned by Terraform by referencing a `.tfstate`
+- Import existing resources into Pulumi in the usual way or using the `tf2pulumi` to adopt all resources from an existing `.tfstate`
+- converting HCL to Pulumi code using `tf2pulumi`
+
 ## see also
 - [pulumi.com/docs/get-started/aws](https://www.pulumi.com/docs/get-started/aws/begin/)
 - [pulumi.com/docs/tutorials/aws/rest-api/](https://www.pulumi.com/docs/tutorials/aws/rest-api/)
 - [youtube.com/c/PulumiTV/videos](https://www.youtube.com/c/PulumiTV/videos)
 - [Pulumi Crosswalk for AWS](https://www.pulumi.com/docs/guides/crosswalk/aws/)
+- [pulumi.com/docs/guides/adopting/from_terraform/](https://www.pulumi.com/docs/guides/adopting/from_terraform/)
+- [github.com/pulumi/tf2pulumi#building-and-installation](https://github.com/pulumi/tf2pulumi#building-and-installation)
+- [pulumi.com/tf2pulumi/](https://www.pulumi.com/tf2pulumi/)

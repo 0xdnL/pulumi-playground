@@ -44,7 +44,6 @@ resource "aws_sqs_queue" "results_updates_dl_queue" {
 
 resource "aws_sqs_queue_policy" "results_updates_queue_policy" {
   queue_url = aws_sqs_queue.results_updates_queue.id
-
   policy = jsonencode({
     "Version" : "2012-10-17",
     "Id" : "sqspolicy",
@@ -152,4 +151,9 @@ resource "aws_lambda_event_source_mapping" "results_updates_lambda_event_source"
   enabled          = true
   function_name    = aws_lambda_function.results_updates_lambda.arn
   batch_size       = 1
+}
+
+output aws_lambda_function_results_updates_lambda {
+  value       = aws_lambda_function.results_updates_lambda
+  description = "The AWS SQS name of the digital survey answers command topic."
 }

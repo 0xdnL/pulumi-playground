@@ -1,0 +1,9 @@
+name: aws-py-component
+runtime: python
+# main: infra.py
+description: example using a component
+template:
+  config:
+    aws:region:
+      description: The AWS region to deploy into
+      default: eu-central-1

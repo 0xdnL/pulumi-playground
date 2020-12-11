@@ -9,8 +9,8 @@ orbs:
 # Orchestrate or schedule a set of jobs
 workflows:
 
-  welcome:      # Name the workflow "welcome"
-    jobs:       # Run the welcome/run job in its own container
+  # welcome:      # Name the workflow "welcome"
+  #   jobs:       # Run the welcome/run job in its own container
 
   pulumi:
     jobs:

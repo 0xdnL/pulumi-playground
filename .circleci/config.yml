@@ -5,7 +5,7 @@ jobs:
   build:
     docker:
       - image: circleci/python:3.9.0
-    working_directory: ~/repo/aws-py-component
+    working_directory: /home/circleci/repo/aws-py-component/aws-py-component
     steps:
       - checkout
       - pulumi/login

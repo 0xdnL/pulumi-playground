@@ -4,10 +4,28 @@ version: 2.1
 orbs:
   # Declare a dependency on the welcome-orb
   welcome: circleci/welcome-orb@0.4.1
+  pulumi: pulumi/pulumi@1.0.0
 # Orchestrate or schedule a set of jobs
 workflows:
   # Name the workflow "welcome"
   welcome:
     # Run the welcome/run job in its own container
     jobs:
-      - welcome/run
+
+jobs:
+  build:
+    docker:
+      - image: circleci/python:3.9.0
+    working_directory: ~/repo/
+    steps:
+      - checkout
+      - pulumi/login
+      - run:
+          command: |
+            pwd
+            ls -lah
+            echo python3 -m venv venv
+            echo source venv/bin/activate
+            echo pip3 install -r requirements.txt
+      - pulumi/update:
+          stack: experimental

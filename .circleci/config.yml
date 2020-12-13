@@ -5,7 +5,7 @@ jobs:
   build:
     docker:
     - image: circleci/python:3.9.0
-    working_directory: ~/repo/aws-py-component
+    working_directory: ~/repo/
     steps:
       - checkout:
           patch: ~/repo
@@ -20,4 +20,4 @@ jobs:
             pip3 install -r requirements.txt
       - pulumi/update:
           stack: experimental
-          working_directory: ~/repo/aws-py-component
+          working_directory: ~/repo/aws-py-component/

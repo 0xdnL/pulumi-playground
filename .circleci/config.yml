@@ -4,7 +4,7 @@ orbs:
 jobs:
   build:
     docker:
-      - image: circleci/python:3.9.0
+    - image: circleci/python:3.9.0
     working_directory: ~/repo/aws-py-component
     steps:
       - checkout:
@@ -12,6 +12,7 @@ jobs:
       - pulumi/login
       - run:
           command: |
+            cd aws-py-component
             pwd
             ls -lah
             python3 -m venv venv

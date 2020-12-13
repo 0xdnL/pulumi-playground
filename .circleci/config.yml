@@ -13,10 +13,6 @@ jobs:
       - run:
           command: |
             cd aws-py-component
-            pwd
-            ls -lah
-            python -m venv venv
-            source venv/bin/activate
             pip install -r requirements.txt
       - pulumi/update:
           stack: experimental
